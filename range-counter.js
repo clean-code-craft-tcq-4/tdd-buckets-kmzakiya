@@ -30,7 +30,7 @@ function printRangeCounter() {
     console.log(formatData(key, value));
   }
 }
-printRangeCounter();
+//printRangeCounter();
 module.exports = {
   sort,
   getRangeCounter,
