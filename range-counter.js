@@ -24,13 +24,13 @@ function getRangeCounter(data) {
 function formatData(key, value) {
   return `${key}, ${value}`;
 }
-function printRangeCounter() {
-  const data = getRangeCounter([2, 2, 4, 3, 6, 8, 7, 9, 10]);
+function printRangeCounter(data) {
+  data = getRangeCounter([2, 2, 4, 3, 6, 8, 7, 9, 10]);
   for (const [key, value] of Object.entries(data)) {
     console.log(formatData(key, value));
   }
 }
-//printRangeCounter();
+printRangeCounter([2, 2, 4, 3, 6, 8, 7, 9, 10]);
 module.exports = {
   sort,
   getRangeCounter,
