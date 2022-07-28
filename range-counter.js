@@ -8,7 +8,7 @@ function getRangeCounter(data) {
   let counter = 1;
   let output = {};
   for (let i = 1; i < data.length; i++) {
-    if (previous === data[i] || previous + 1 === data[i]) {
+    if ([0,1].includes(data[i] - previous)) {
       previous = data[i];
       counter++;
     } else {
