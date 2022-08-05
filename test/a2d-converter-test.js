@@ -41,6 +41,10 @@ describe('convert number A2D', () => {
   it('should convert 12 bit integer 4094 to 10 Amp', () => {
     expect(a2dConverter.converNumbertA2D(4094, MAX_LIMIT_AMP, MAX_LIMIT_BIT)).to.equal(10);
   });
+
+  it('should convert 12 bit integer to Amp by default', () => {
+    expect(a2dConverter.converNumbertA2D(4094)).to.equal(10);
+  });
 });
 
 describe('convert array A2D', () => {
@@ -55,6 +59,13 @@ describe('convert array A2D', () => {
             [0, 1146, 4094],
             MAX_LIMIT_AMP,
             MAX_LIMIT_BIT,
+        ),
+    ).to.deep.equal([0, 3, 10]);
+  });
+  it('should convert 12 bit integer array to Amps by default', () => {
+    expect(
+        a2dConverter.converArraytA2D(
+            [0, 1146, 4094],
         ),
     ).to.deep.equal([0, 3, 10]);
   });
